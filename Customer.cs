@@ -6,7 +6,6 @@ public class Customer : Person
                     : base( birthdate, gender, name, cpf)
     {
        
-       
     }
     public override string ToString()
     {

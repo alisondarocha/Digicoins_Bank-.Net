@@ -10,6 +10,7 @@ public class CheckingAccount : IAccount
     {
         Status = Status.Open;
         Number = random(Number);
+        this.Balance = 0;
     }
     private int random(int number)
     {

@@ -3,14 +3,14 @@ using System;
 public class AccountSavings : IAccount
 { 
     private double Balance { get; set; }
-    private Status Status;
     private int Number { get; set; }
+    private Status Status;
 
     public AccountSavings( Bank name, Customer client )
     {
         Status = Status.Open;
         Number = random(Number);
-        this.Balance += 50;
+        this.Balance = 0;
     }
     private int random(int number)
     {

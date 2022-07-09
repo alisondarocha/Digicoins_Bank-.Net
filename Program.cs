@@ -15,7 +15,6 @@ public class Program
         Console.WriteLine(customer1);
         Console.WriteLine(accS1);
         Console.WriteLine(digicoinBank);
-
         Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         
         accC1.ShowData(customer2, digicoinBank);
