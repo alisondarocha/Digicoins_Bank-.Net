@@ -9,14 +9,14 @@ public class Program
 
         Bank digicoinBank = new Bank("Digicoin");
 
-        AccountSavings accS1 = new AccountSavings(digicoinBank, customer1);
-        CheckingAccount accC1 =  new CheckingAccount (digicoinBank, customer2);
+        AccountSavings accountSaving1 = new AccountSavings(digicoinBank, customer1);
+        CheckingAccount accountChecking1 =  new CheckingAccount (digicoinBank, customer2);
 
         Console.WriteLine(customer1);
-        Console.WriteLine(accS1);
+        Console.WriteLine(accountSaving1);
         Console.WriteLine(digicoinBank);
         Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-        
-        accC1.ShowData(customer2, digicoinBank);
+
+        accountChecking1.ShowData(customer2, digicoinBank);
     }
 }
