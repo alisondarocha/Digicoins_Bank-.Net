@@ -32,14 +32,19 @@ public class AccountSavings : IAccount
     }
     public void Deposit(double value)
     {
-        if(value > 0)
-        {
-            this.Balance += value;
-            Console.WriteLine($"`Você depositou {value} em sua conta!");
-        }
+        if(Status == Status.Open)
+            if(value > 0)
+            {
+                this.Balance += value;
+                Console.WriteLine($"`Você depositou {value} em sua conta!");
+            }
+            else
+            {
+                Console.WriteLine("Impossível fazer depósito");
+                Console.WriteLine("Saldo atual: " + this.Balance);
+            }
         else
-            Console.WriteLine("Impossível fazer depósito");
-        Console.WriteLine("Saldo atual: " + this.Balance);
+            Console.WriteLine("ERRO, sua conta atualmente está " + Status.Closer);
     }
     public void Transfer(IAccount c2, double value)
     {
@@ -60,7 +65,7 @@ public class AccountSavings : IAccount
                 Console.WriteLine("Não é possível transferir um valor negativo");
         }
         else 
-            Console.WriteLine("Sua conta se encontra: " + Status.Closer);
+            Console.WriteLine("ERRO, sua conta atualmente está " + Status.Closer);
     }
     public override string ToString()
     {

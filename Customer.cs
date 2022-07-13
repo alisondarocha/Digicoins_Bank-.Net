@@ -9,7 +9,7 @@ public class Customer : Person
     }
     public override string ToString()
     {
-        return "Cliente: " + Name + "\n" +
+        return "Nome: " + Name + "\n" +
         "Data de nascimento: " + Birthdate + "\n" +
         "CPF: " + Cpf;
     }

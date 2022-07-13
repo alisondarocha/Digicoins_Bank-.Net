@@ -5,7 +5,6 @@ public class CheckingAccount : IAccount
     private int Number { get; set; }
     private double Balance { get; set; }
     private Status Status;
-
     public CheckingAccount(Bank name, Customer client)
     {
         Status = Status.Open;
@@ -47,7 +46,7 @@ public class CheckingAccount : IAccount
                 Console.WriteLine("Saldo atual: " + this.Balance);
             }
         else
-            Console.WriteLine("A conta se encontra: " + Status.Open);
+            Console.WriteLine("A conta se encontra: " + Status.Closer);
     }
     public void Transfer(IAccount c2, double value)
     {

@@ -15,7 +15,7 @@ public class Program
         Console.WriteLine(customer1);
         Console.WriteLine(accountSaving1);
         Console.WriteLine(digicoinBank);
-        Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        Console.WriteLine("/n-=-=-=-=-=-=-=-=-=-=-=-=-=-/n");
 
         accountChecking1.ShowData(customer2, digicoinBank);
     }
