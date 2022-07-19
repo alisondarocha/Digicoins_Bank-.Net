@@ -1,14 +1,13 @@
 using System;
 using System.Diagnostics;
 
-public class Bank
+public sealed class Bank
 {
-    public string Name { get; set; }
-    public Guid SecurityData = Guid.NewGuid();
-    public Bank (string name)
-    {
-        this.Name = name;
-    }
+    public string Name = "Digicoin Bank";
+    public Guid SecurityData {get; set;} = Guid.NewGuid();
+
+    public Bank () { }
+
     public override string ToString()
     {
         return "Nome da instituição: " + Name + "\n" + 

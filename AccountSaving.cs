@@ -67,6 +67,10 @@ public class AccountSavings : IAccount
         else 
             Console.WriteLine("ERRO, sua conta atualmente está " + Status.Closer);
     }
+    public void invest()
+    {
+
+    }
     public override string ToString()
     {
         return  "Número da conta: " + Number + "\n" +

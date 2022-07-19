@@ -3,7 +3,7 @@ using System;
 public class Person
 {
     public string Name { get; set; }
-    private string Cpf { get; set; }
+    private string cpf;
     public DateOnly Birthdate;
     public Gender Gender;
 
@@ -13,5 +13,10 @@ public class Person
         Gender = gender;
         Name = name;
         Cpf = cpf;
+    }
+    public string Cpf
+    {
+        get{return cpf;}
+        set{cpf = value;}
     }
 }
