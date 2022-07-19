@@ -25,7 +25,7 @@ public class CheckingAccount : IAccount
                 this.Balance -= value;
                 Console.WriteLine("Saque realizado");
                 Console.WriteLine("-=-=-=-=-=-=-=-=-");
-                Console.WriteLine("Saldo da conta: " + this.Balance);
+                Console.WriteLine("Saldo da conta: R$" + this.Balance);
             }
             else
                 Console.WriteLine("ERRO! valor insuficiente");
@@ -43,7 +43,7 @@ public class CheckingAccount : IAccount
             else
             {
                 Console.WriteLine("Impossível fazer depósito em valor negativo");
-                Console.WriteLine("Saldo atual: " + this.Balance);
+                Console.WriteLine("Saldo atual: R$" + this.Balance);
             }
         else
             Console.WriteLine("A conta se encontra: " + Status.Closer);
@@ -57,7 +57,7 @@ public class CheckingAccount : IAccount
                 {
                     this.Balance -= value;
                     Console.WriteLine("Transfenrência realizada com sucesso!");
-                    Console.WriteLine("Saldo da conta: " + this.Balance);
+                    Console.WriteLine("Saldo da conta: R$" + this.Balance);
                 }
                 else
                     Console.WriteLine("ERRO, saldo insuficiente!");
@@ -67,14 +67,21 @@ public class CheckingAccount : IAccount
         else
             Console.WriteLine("A conta está: " + Status.Closer);
     }
+    public void ShowBalance()
+    {
+        Console.WriteLine("O saldo atual da sua conta é: R$" + this.Balance);
+    }
     public void ShowData(Customer client, Bank data)
     {
         Console.WriteLine("Cliente: " + client.Name);
         Console.WriteLine("Data de nascimento: " + client.Birthdate);
         Console.WriteLine("CPF: " + client.Cpf);
+        Console.WriteLine("Tipo de conta: Cheking");
         Console.WriteLine("Número da conta: " + Number);
         Console.WriteLine("Situação da conta: " + Status);
+        ShowBalance();
         Console.WriteLine("Nome da instituição: " + data.Name);
         Console.WriteLine("Dados da instituição: " + data.SecurityData);
+        
     }
 }

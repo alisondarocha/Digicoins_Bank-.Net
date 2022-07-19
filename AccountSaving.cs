@@ -25,7 +25,7 @@ public class AccountSavings : IAccount
                 this.Balance -= value;
                 Console.WriteLine("Saque realizado");
                 Console.WriteLine("-=-=-=-=-=-=-=-=-");
-                Console.WriteLine("Saldo da conta: " + this.Balance);
+                Console.WriteLine("Saldo da conta: R$" + this.Balance);
             }
         else
             Console.WriteLine("ERRO! valor insuficiente");
@@ -41,7 +41,7 @@ public class AccountSavings : IAccount
             else
             {
                 Console.WriteLine("Impossível fazer depósito");
-                Console.WriteLine("Saldo atual: " + this.Balance);
+                Console.WriteLine("Saldo atual: R$" + this.Balance);
             }
         else
             Console.WriteLine("ERRO, sua conta atualmente está " + Status.Closer);
@@ -56,7 +56,7 @@ public class AccountSavings : IAccount
                 {
                     this.Balance -= value;
                     Console.WriteLine("Transfenrência realizada com sucesso!");
-                    Console.WriteLine("Saldo da conta: " + this.Balance);
+                    Console.WriteLine("Saldo da conta: R$" + this.Balance);
                 }
                 else
                     Console.WriteLine("ERRO, saldo insuficiente!");
@@ -67,13 +67,18 @@ public class AccountSavings : IAccount
         else 
             Console.WriteLine("ERRO, sua conta atualmente está " + Status.Closer);
     }
-    public void invest()
-    {
 
+    public string ShowBalance()
+    {
+        return "O saldo atual da sua conta é: R$" + this.Balance;
     }
+
     public override string ToString()
     {
-        return  "Número da conta: " + Number + "\n" +
-                "Situação da conta: " + Status;
+        return  "Tipo de conta: Saving" + "\n" +
+                "Número da conta: " + Number + "\n" +
+                "Situação da conta: " + Status + 
+                "\n" + ShowBalance();
+                
     }    
 }
