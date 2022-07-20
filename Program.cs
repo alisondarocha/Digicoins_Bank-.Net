@@ -11,13 +11,19 @@ public class Program
 
         var accountSavingCustomer1 = new AccountSavings(digicoinBank, customer1);
         var checkingAccountCustomer2 =  new CheckingAccount (digicoinBank, customer2);
-
+        var accountSavingCustomer2 = new AccountSavings(digicoinBank, customer2);
 
         Console.WriteLine(digicoinBank);
         Console.WriteLine(customer1);
         Console.WriteLine(accountSavingCustomer1);
+        
         Console.WriteLine("\n-=-=-=-=-=-=-=-=-=-=-=-=-=- \n");
         Console.WriteLine(customer2);
-        Console.WriteLine(checkingAccountCustomer2);        
+        Console.WriteLine(checkingAccountCustomer2);     
+        Console.WriteLine(accountSavingCustomer2);
+
+        Console.WriteLine("\n-=-=-=-=-=-=-=-=-=-=-=-=-=- \n");
+        accountSavingCustomer2.Deposit(500);
+        accountSavingCustomer2.Withdraw(200);
     }
 }
