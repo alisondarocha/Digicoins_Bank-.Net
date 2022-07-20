@@ -25,7 +25,7 @@ public class AccountSavings : IAccount
                 this.Balance -= value;
                 Console.WriteLine("Saque realizado");
                 Console.WriteLine("-=-=-=-=-=-=-=-=-");
-                Console.WriteLine("Saldo da conta: R$" + this.Balance);
+                Console.WriteLine("Saldo da conta poupança: R$" + this.Balance);
             }
         else
             Console.WriteLine("ERRO! valor insuficiente");
@@ -36,12 +36,12 @@ public class AccountSavings : IAccount
             if(value > 0)
             {
                 this.Balance += value;
-                Console.WriteLine($"`Você depositou {value} em sua conta!");
+                Console.WriteLine($"Você depositou R${value} em sua conta!");
             }
             else
             {
                 Console.WriteLine("Impossível fazer depósito");
-                Console.WriteLine("Saldo atual: R$" + this.Balance);
+                Console.WriteLine("Saldo atual da conta poupança: R$" + this.Balance);
             }
         else
             Console.WriteLine("ERRO, sua conta atualmente está " + Status.Closer);
@@ -56,7 +56,7 @@ public class AccountSavings : IAccount
                 {
                     this.Balance -= value;
                     Console.WriteLine("Transfenrência realizada com sucesso!");
-                    Console.WriteLine("Saldo da conta: R$" + this.Balance);
+                    Console.WriteLine("Saldo da conta poupança: R$" + this.Balance);
                 }
                 else
                     Console.WriteLine("ERRO, saldo insuficiente!");
@@ -68,17 +68,16 @@ public class AccountSavings : IAccount
             Console.WriteLine("ERRO, sua conta atualmente está " + Status.Closer);
     }
 
-    private string ShowBalance()
+    public void ShowBalance()
     {
-        return "O saldo atual da sua conta é: R$" + this.Balance;
+        Console.WriteLine("O saldo atual da sua conta poupança é: R$" + this.Balance);
     }
 
     public override string ToString()
     {
-        return  "Tipo de conta: Saving" + "\n" +
+        return  "Tipo de conta: Poupança" + "\n" +
                 "Número da conta: " + Number + "\n" +
-                "Situação da conta: " + Status + 
-                "\n" + ShowBalance();
+                "Situação da conta: " + Status;
                 
     }    
 }
