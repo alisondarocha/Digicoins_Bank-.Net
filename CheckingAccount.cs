@@ -67,21 +67,16 @@ public class CheckingAccount : IAccount
         else
             Console.WriteLine("A conta está: " + Status.Closer);
     }
-    public void ShowBalance()
+    private string ShowBalance()
     {
-        Console.WriteLine("O saldo atual da sua conta é: R$" + this.Balance);
+        return "O saldo atual da sua conta é: R$" + this.Balance;
     }
-    public void ShowData(Customer client, Bank data)
+    
+    public override string ToString()
     {
-        Console.WriteLine("Cliente: " + client.Name);
-        Console.WriteLine("Data de nascimento: " + client.Birthdate);
-        Console.WriteLine("CPF: " + client.Cpf);
-        Console.WriteLine("Tipo de conta: Cheking");
-        Console.WriteLine("Número da conta: " + Number);
-        Console.WriteLine("Situação da conta: " + Status);
-        ShowBalance();
-        Console.WriteLine("Nome da instituição: " + data.Name);
-        Console.WriteLine("Dados da instituição: " + data.SecurityData);
-        
+        return  "Tipo de conta: Checking" + "\n" +
+                "Número da conta: " + Number + "\n" +
+                "Situação da conta: " + Status + 
+                "\n" + ShowBalance();
     }
 }

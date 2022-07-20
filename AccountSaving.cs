@@ -68,7 +68,7 @@ public class AccountSavings : IAccount
             Console.WriteLine("ERRO, sua conta atualmente está " + Status.Closer);
     }
 
-    public string ShowBalance()
+    private string ShowBalance()
     {
         return "O saldo atual da sua conta é: R$" + this.Balance;
     }

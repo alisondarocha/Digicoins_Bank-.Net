@@ -9,15 +9,15 @@ public class Program
 
         var digicoinBank = new Bank();
 
-        var accountSaving1 = new AccountSavings(digicoinBank, customer1);
-        var accountChecking1 =  new CheckingAccount (digicoinBank, customer2);
+        var accountSavingCustomer1 = new AccountSavings(digicoinBank, customer1);
+        var checkingAccountCustomer2 =  new CheckingAccount (digicoinBank, customer2);
 
-        Console.WriteLine(customer1);
-        Console.WriteLine(accountSaving1);
+
         Console.WriteLine(digicoinBank);
+        Console.WriteLine(customer1);
+        Console.WriteLine(accountSavingCustomer1);
         Console.WriteLine("\n-=-=-=-=-=-=-=-=-=-=-=-=-=- \n");
-
-        accountChecking1.ShowData(customer2, digicoinBank);
-
+        Console.WriteLine(customer2);
+        Console.WriteLine(checkingAccountCustomer2);        
     }
 }
