@@ -25,7 +25,7 @@ public class CheckingAccount : IAccount
                 this.Balance -= value;
                 Console.WriteLine("Saque realizado");
                 Console.WriteLine("-=-=-=-=-=-=-=-=-");
-                Console.WriteLine("Saldo da conta: R$" + this.Balance);
+                Console.WriteLine("Saldo da conta corrente: R$" + this.Balance);
             }
             else
                 Console.WriteLine("ERRO! valor insuficiente");
@@ -38,12 +38,12 @@ public class CheckingAccount : IAccount
             if(value > 0)
             { 
                 this.Balance += value;
-                Console.WriteLine($"`Você depositou {value} em sua conta!");
+                Console.WriteLine($"Você depositou R${value} em sua conta!");
             }
             else
             {
                 Console.WriteLine("Impossível fazer depósito em valor negativo");
-                Console.WriteLine("Saldo atual: R$" + this.Balance);
+                Console.WriteLine("Saldo atual da conta corrente: R$" + this.Balance);
             }
         else
             Console.WriteLine("A conta se encontra: " + Status.Closer);
@@ -57,7 +57,7 @@ public class CheckingAccount : IAccount
                 {
                     this.Balance -= value;
                     Console.WriteLine("Transfenrência realizada com sucesso!");
-                    Console.WriteLine("Saldo da conta: R$" + this.Balance);
+                    Console.WriteLine("Saldo da conta corrente: R$" + this.Balance);
                 }
                 else
                     Console.WriteLine("ERRO, saldo insuficiente!");
@@ -67,16 +67,16 @@ public class CheckingAccount : IAccount
         else
             Console.WriteLine("A conta está: " + Status.Closer);
     }
-    private string ShowBalance()
+
+    public void ShowBalance()
     {
-        return "O saldo atual da sua conta é: R$" + this.Balance;
+        Console.WriteLine( "O saldo atual da sua conta corrente é: R$" + this.Balance);
     }
     
     public override string ToString()
     {
-        return  "Tipo de conta: Checking" + "\n" +
+        return  "Tipo de conta: Corrente" + "\n" +
                 "Número da conta: " + Number + "\n" +
-                "Situação da conta: " + Status + 
-                "\n" + ShowBalance();
+                "Situação da conta: " + Status;
     }
 }
