@@ -9,9 +9,9 @@ public class Program
 
         var digicoinBank = new Bank();
 
-        var accountSavingCustomer1 = new AccountSavings(digicoinBank, customer1);
+        var accountSavingCustomer1 = new AccountSaving(digicoinBank, customer1);
         var checkingAccountCustomer2 =  new CheckingAccount (digicoinBank, customer2);
-        var accountSavingCustomer2 = new AccountSavings(digicoinBank, customer2);
+        var accountSavingCustomer2 = new AccountSaving(digicoinBank, customer2);
 
         Console.WriteLine(digicoinBank);
         Console.WriteLine(customer1);
@@ -23,7 +23,7 @@ public class Program
         Console.WriteLine(accountSavingCustomer2);
 
         Console.WriteLine("\n-=-=-=-=-=-=-=-=-=-=-=-=-=- \n");
-        accountSavingCustomer2.Deposit(500);
-        accountSavingCustomer2.Withdraw(200);
+        accountSavingCustomer1.Deposit(1000);
+        accountSavingCustomer1.Transfer(checkingAccountCustomer2, 500);
     }
 }

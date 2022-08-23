@@ -6,8 +6,6 @@ public sealed class Bank
     public string Name = "Digicoin Bank";
     public Guid SecurityData {get; set;} = Guid.NewGuid();
 
-    public Bank () { }
-
     public override string ToString()
     {
         return "Nome da instituição: " + Name + "\n" + 
