@@ -2,8 +2,8 @@ using System;
 
 public class Person
 {
-    public string name {get; set;}
-    private string cpf;
+    public string Name { get; set; }
+    private string Cpf { get; set; }
     public DateOnly Birthdate;
     public Gender Gender;
 
@@ -13,15 +13,5 @@ public class Person
         Gender = gender;
         Name = name;
         Cpf = cpf;
-    }
-    public string Cpf
-    {
-        get{return cpf;}
-        set{cpf = value;}
-    }
-    public string Name
-    {
-        get{return name;}
-        set{name = value;}
     }
 }
